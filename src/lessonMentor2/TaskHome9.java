@@ -6,9 +6,6 @@ public class TaskHome9 {
     public static void main(String[] args) {
         //Ededin tersini yazmaq (1234 -> 4321)
 
-        // TODO əvvələ və axıra 0 düşdükdə run da olar niə görünmür
-        // məs: 01230 yazdıqda 321 yazır 03210 yox
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number : ");
         int num = scanner.nextInt();
