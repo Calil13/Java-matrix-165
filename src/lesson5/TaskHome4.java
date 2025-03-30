@@ -2,7 +2,7 @@ package lesson5;
 
 public class TaskHome4 {
     public static void main(String[] args) {
-        //arr-in içərsindəki bütün iki yaxın rəqəmləri cəmlər
+        //arr-in içərsindəki bütün iki yaxın rəqəmləri cəmlə
         //və ən kiçik cəmi verən rəqəmləri yazdır.
         //(məs: {1,3,8,2} -> 1+3=4,3+8=11,8+2=10)
         //output : 1 and 3

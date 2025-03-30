@@ -8,8 +8,8 @@ public class Task3 {
         int[] arr = {1, 4, 3, 5, 7, 10};
         int sum = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int i : arr) {
+            sum += i;
         }
         int average = sum / arr.length;
         System.out.println("Average is : " + average);

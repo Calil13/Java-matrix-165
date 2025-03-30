@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
+        //Fibonacci. (input Fibonacci in uzunlugu olacaq)
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextByte();
