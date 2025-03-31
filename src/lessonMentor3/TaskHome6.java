@@ -10,10 +10,5 @@ public class TaskHome6 {
         onu da özü ilə bir cütlük kimi saymaq lazımdır.
         n ədədinin simmetriya dərəcəsini tapın.
         */
-
-
-        int[] array = {1, 4, 5, 10, 8, 6, 5, 4, 1};
-        int count = 0;
-
     }
 }
