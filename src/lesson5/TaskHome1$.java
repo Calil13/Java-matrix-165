@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class TaskHome1$ {
     public static void main(String[] args) {
+        //min və max ədədi tap
 
         int[] numbers = {13, -4, 55, -1, 54, 3};
 
