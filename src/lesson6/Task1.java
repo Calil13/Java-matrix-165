@@ -8,20 +8,10 @@ public class Task1 {
     public static void main(String[] args) {
         /*
         uzunluqu 10 olan array var scanner ilə 10 ədəd əlavə edirik bu arraya
-        11 ci ədədi əlavə etdikdə yeni array yaradırıq
+        11 ci ədədi əlavə etdikdə yeni array yaradırıq və yeni arrayın ölçüsünü
+        2 yə bölüb üzərinə əvvəlki arrayın uzunluqun gəlirik və yeni ədədi
+        o array-ə əlavə edirik və isdədiyimiz zaman loop-u dayandırıb
+        array-i ekrana yazdırırq
          */
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the numbers : ");
-        int[] array1 = new int[10];
-
-        for (int i = 0; i < array1.length; i++) {
-            array1[i] = scanner.nextInt();
-            if (array1[i] == 11){
-                for (int j = i; j < array1.length * 1.5; j++) {
-                    int array2 = scanner.nextInt();
-                }
-            }
-        }
     }
 }
