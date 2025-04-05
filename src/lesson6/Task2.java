@@ -2,6 +2,7 @@ package lesson6;
 
 public class Task2 {
     public static void main(String[] args) {
+        //TODO For Loop
         //İki ölçülü array-in elementlərin konsula çıxart
 
         int[] arr1 = {1, 2, 3};

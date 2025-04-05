@@ -25,15 +25,15 @@ public class TaskHome7 {
         }
 
         System.out.println("Input arrays : ");
-        for (int num : array){
-            System.out.print(num + ", ");
+        for (int num1 : array){
+            System.out.print(num1 + ", ");
         }
 
         System.out.println();
 
-        for (int num : array) {
-            if (num % 6 == 0) {
-                sum += num;
+        for (int num2 : array) {
+            if (num2 % 6 == 0) {
+                sum += num2;
                 count++;
             }
         }
