@@ -9,7 +9,6 @@ public class Task2 {
        output: 3 9
         */
 
-
         int[] arr1 = {1, 4, 3, 5, 7};
         int[] arr2 = {2, 4, 6, 8, 1};
         boolean found;

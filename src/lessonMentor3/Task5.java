@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Task5 {
     public static void main(String[] args) {
-
         //Tam ədədlər ardıcıllığı verilir(array ile).
         //Ardıcıllığın hər bir müsbət elementini
         //2 vahid artırmalı(array-de qalacaq).

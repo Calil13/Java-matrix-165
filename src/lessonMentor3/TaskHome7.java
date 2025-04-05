@@ -20,17 +20,15 @@ public class TaskHome7 {
         int[] array = new int[size];
         System.out.println("Enter " + size + " numbers!");
 
-        for (int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             array[i] = scanner.nextInt();
         }
 
         System.out.println("Input arrays : ");
-        for (int num1 : array){
+        for (int num1 : array) {
             System.out.print(num1 + ", ");
         }
-
         System.out.println();
-
         for (int num2 : array) {
             if (num2 % 6 == 0) {
                 sum += num2;
