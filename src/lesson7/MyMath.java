@@ -34,13 +34,27 @@ public class MyMath {
     }
 
     //Power
-    int pow(int num, int powNum){
+    int pow(int num, int powNum) {
         int power = 1;
 
         for (int i = 0; i < powNum; i++) {
             power *= num;
         }
         return power;
+    }
+
+    //Prime
+    boolean prime(int num) {
+        if (num <= 1) {
+            return false; // 1 və mənfi ədədlər sadə deyil
+        }
+
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0){
+                return false;
+            }
+        }
+        return true;
     }
 }
 
