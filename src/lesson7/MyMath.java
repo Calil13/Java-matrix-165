@@ -32,5 +32,15 @@ public class MyMath {
         }
         return f;
     }
+
+    //Power
+    int pow(int num, int powNum){
+        int power = 1;
+
+        for (int i = 0; i < powNum; i++) {
+            power *= num;
+        }
+        return power;
+    }
 }
 

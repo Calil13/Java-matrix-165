@@ -1,10 +1,10 @@
 package lesson7;
 
-public class Answers {
+public class MyMathAnswers {
     public static void main(String[] args) {
-        //1-Min Number
         MyMath myMath = new MyMath();
 
+        //1-Min Number
         int result = myMath.min(4, 5);
         System.out.println("Min : " + result);
 
@@ -20,5 +20,9 @@ public class Answers {
         //4-Factorial
         int fac = myMath.fac(6);
         System.out.println("Factorial : " + fac);
+
+        //4-Power
+        int power = myMath.pow(12,5);
+        System.out.println("Power : " + power);
     }
 }
