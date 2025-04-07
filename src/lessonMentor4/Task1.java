@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Task1 {
 
-    void calculator(Scanner scanner) {
+    void calculator() {
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter first number : ");
         double num1 = scanner.nextInt();
