@@ -50,11 +50,38 @@ public class MyMath {
         }
 
         for (int i = 2; i <= num / 2; i++) {
-            if (num % i == 0){
+            if (num % i == 0) {
                 return false;
             }
         }
         return true;
+    }
+
+    //Palindrome
+    boolean palindrome(int num) {
+        int temp = num;
+        int reversedNum = 0;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            reversedNum =reversedNum * 10 + digit;
+            temp /= 10;
+        }
+
+        if (num == reversedNum){
+            return true;
+        }
+
+        return false;
+    }
+
+    //Even Odd
+    boolean Even(int num){
+        if (num % 2 == 0){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 

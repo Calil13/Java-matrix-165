@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class MyMathAnswers {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         MyMath myMath = new MyMath();
 
         //1-Min Number
@@ -27,15 +28,43 @@ public class MyMathAnswers {
         int power = myMath.pow(12,2);
         System.out.println("5 - Power : " + power);
 
+        System.out.println("");
+
         //6-Prime
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("6 - Enter the Number : ");
+        System.out.println("6 - isPrime : ");
+        System.out.print("Enter the Number : ");
         int number = scanner.nextInt();
 
         if (myMath.prime(number)){
             System.out.println(number + " Number is Prime!");
         }else {
             System.out.println(number + " Number is Complex!");
+        }
+
+        System.out.println("");
+
+        //7-Palindrome
+        System.out.println("7 - Palindrome : ");
+        System.out.print("Enter the Number : ");
+        int number1 = scanner.nextInt();
+
+        if (myMath.palindrome(number1)){
+            System.out.println(number1 + " Number is Palindrome!");
+        }else {
+            System.out.println(number1 + " Number isn't Palindrome!");
+        }
+
+        System.out.println("");
+
+        //8 - Even Odd
+        System.out.println("8 - Even and Odd : ");
+        System.out.print("Enter the Number : ");
+        int number2 = scanner.nextInt();
+
+        if (myMath.Even(number2)){
+            System.out.println(number2 + " Number is Even!");
+        }else {
+            System.out.println(number2 + " Number is Odd!");
         }
     }
 }
