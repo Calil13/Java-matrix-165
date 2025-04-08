@@ -2,7 +2,7 @@ package lessonMentor4;
 
 import java.util.Scanner;
 
-public class Task1 {
+public class Calculator {
 
     void calculator() {
         Scanner scanner = new Scanner(System.in);
@@ -49,5 +49,10 @@ public class Task1 {
             default:
                 System.out.println("Invalid choice! Choose from 1 to 6.");
         }
+    }
+
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        calculator.calculator();
     }
 }
