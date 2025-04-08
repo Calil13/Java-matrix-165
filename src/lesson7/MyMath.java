@@ -76,7 +76,7 @@ public class MyMath {
     }
 
     //Even Odd
-    boolean Even(int num){
+    boolean even(int num){
         if (num % 2 == 0){
             return true;
         }else {

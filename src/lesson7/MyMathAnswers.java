@@ -61,7 +61,7 @@ public class MyMathAnswers {
         System.out.print("Enter the Number : ");
         int number2 = scanner.nextInt();
 
-        if (myMath.Even(number2)){
+        if (myMath.even(number2)){
             System.out.println(number2 + " Number is Even!");
         }else {
             System.out.println(number2 + " Number is Odd!");
