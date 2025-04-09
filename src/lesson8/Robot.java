@@ -13,9 +13,9 @@ public class Robot {
 
     void FounSpeed() {
 
-        if (mark == "İRobot" && power < 50) {
+        if (mark == "İRobot" && power <= 50 && power >= 10) {
             speed = 60;
-        } else if (mark == "Unitree" && power < 100 && power > 50) {
+        } else if (mark == "Unitree" && power <= 100 && power > 50) {
             speed = 80;
         }else {
             speed = 20;
