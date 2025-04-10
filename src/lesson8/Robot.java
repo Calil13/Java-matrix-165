@@ -11,7 +11,7 @@ public class Robot {
         this.power = power;
     }
 
-    void FounSpeed() {
+    void FindSpeed() {
 
         if (mark == "İRobot" && power <= 50 && power >= 10) {
             speed = 60;
