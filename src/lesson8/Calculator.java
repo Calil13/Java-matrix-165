@@ -1,7 +1,6 @@
 package lesson8;
 
 public class Calculator {
-
     int sum(int num1I, int num2I) {
         return num1I + num2I;
     }
