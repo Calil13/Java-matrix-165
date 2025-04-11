@@ -11,7 +11,7 @@ public class Robot {
         this.power = power;
     }
 
-    void FindSpeed() {
+    void findSpeed() {
 
         if (mark == "İRobot" && power <= 50 && power >= 10) {
             speed = 60;
@@ -22,7 +22,7 @@ public class Robot {
         }
     }
 
-    void InformationRobot(){
+    void informationRobot(){
         System.out.println("Mark : " + mark +
                 "\nPower : " + power +
                 "\nSpeed : " + speed);

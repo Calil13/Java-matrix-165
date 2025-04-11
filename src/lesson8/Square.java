@@ -1,7 +1,7 @@
 package lesson8;
 
 public class Square {
-    double Perimete(double side){
+    double perimete(double side){
         return side * 4;
     }
 
