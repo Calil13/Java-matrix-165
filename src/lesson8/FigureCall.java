@@ -2,6 +2,7 @@ package lesson8;
 
 public class FigureCall {
     public static void main(String[] args) {
+        //1 - Circle
         Circle circle = new Circle();
         int radius = 4;
         double perimeterC = circle.Perimete(radius);
@@ -11,6 +12,7 @@ public class FigureCall {
 
         System.out.println();
 
+        //2 - Triangle
         Triangle triangle = new Triangle();
         double perimeterT = triangle.perimeter(12,8,5);
         double areaT = triangle.area(10,2);
@@ -19,6 +21,7 @@ public class FigureCall {
 
         System.out.println();
 
+        //3 - Square
         Square square = new Square();
         double side = 10;
         double perimeterS = square.Perimete(side);
