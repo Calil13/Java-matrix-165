@@ -1,12 +1,18 @@
 package lessonMentor4;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class BinaryNumberOfOnes {
     public static void main(String[] args) {
         //Ədədin ikilik say sistemindeki yazılışında birlərin sayını tapmaq.
 
-        int num = 51;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the Number : ");
+        int num = scanner.nextInt();
+
+        System.out.println();
+
         int temp = num;
         int index = 0;
 

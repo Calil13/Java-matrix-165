@@ -7,7 +7,7 @@ public class BinarySearch {
         BinarySearch binarySearch = new BinarySearch();
 
         int[] array = {1, 2, 5, 7, 8, 9, 11, 15};
-        binarySearch.binarySearch(array, 11);
+        binarySearch.binarySearch(array, 12);
     }
 
     void binarySearch(int[] arr, int num) {
