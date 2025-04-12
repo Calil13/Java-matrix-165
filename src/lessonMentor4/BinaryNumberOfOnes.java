@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class BinaryNumberOfOnes {
     public static void main(String[] args) {
+        //Ədədin ikilik say sistemindeki yazılışında birlərin sayını tapmaq.
 
-        int num = 13;
+        int num = 51;
         int temp = num;
         int index = 0;
 
