@@ -2,7 +2,7 @@ package Tasks;
 
 import java.util.Arrays;
 
-public class Tester {
+public class Task1 {
     //Arrayin içindən elə iki rəqəm seçki onları cəmlədikdə
     //sənin qoyduğun hədəfi versin.
     //və sonda onların indexsini ekrana yazdır
@@ -27,7 +27,7 @@ public class Tester {
     }
 
     public static void main(String[] args) {
-        Tester tester = new Tester();
+        Task1 tester = new Task1();
         int[] result = tester.twoSum(new int[]{3, 8, 2, 12, 7}, 23);
 
         System.out.println(Arrays.toString(result));
