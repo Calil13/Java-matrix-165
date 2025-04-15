@@ -3,6 +3,12 @@ package Tasks;
 import java.util.Arrays;
 
 public class Tester {
+    //Arrayin içindən elə iki rəqəm seçki onları cəmlədikdə
+    //sənin qoyduğun hədəfi versin.
+    //və sonda onların indexsini ekrana yazdır
+    //məs: {3, 8, 2, 12, 7}, hədəf : 9
+    //output : [2, 4]
+
     int[] twoSum(int[] nums, int target) {
         int index1 = 0;
         int index2 = 0;
@@ -22,7 +28,7 @@ public class Tester {
 
     public static void main(String[] args) {
         Tester tester = new Tester();
-        int[] result = tester.twoSum(new int[]{3, 8, 2, 12, 7}, 9);
+        int[] result = tester.twoSum(new int[]{3, 8, 2, 12, 7}, 23);
 
         System.out.println(Arrays.toString(result));
     }
