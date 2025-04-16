@@ -1,30 +1,20 @@
 package lessonMentor5;
 
-import java.util.Scanner;
-
 public class Person {
-    String getName(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your name : ");
-        return scanner.nextLine();
+    String name;
+    String surname;
+    int age;
+
+    Person(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
     }
 
-    String getSurname(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your surname : ");
-        return scanner.nextLine();
+    void printInfo() {
+        System.out.println("Name : " + name +
+                "\nSurname : " + surname +
+                "\nAge  : " + age);
+        System.out.println();
     }
-
-    int getAge(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your age : ");
-        return scanner.nextInt();
-    }
-
-    String getDateOfBirth(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your date of birth : ");
-        return scanner.nextLine();
-    }
-
 }
