@@ -23,16 +23,16 @@ public class Person {
     }
 
     void printInfo() {
-        System.out.println("Name : " + name +
-                "\nSurname : " + surname +
-                "\nAge  : " + age +
-                "\nGender : " + gender);
-        System.out.println();
+        for (int i = 0; i < persons.length; i++) {
+            System.out.println("Name : " + persons[i].name +
+                    "\nSurname : " + persons[i].surname +
+                    "\nAge  : " + persons[i].age +
+                    "\nGender : " + persons[i].gender);
+            System.out.println();
+        }
     }
 
     Person fillAndGetPersons() {
-        Person person = new Person();
-
         System.out.println("Enter Name : ");
         name = scanner.next();
 
@@ -44,7 +44,8 @@ public class Person {
 
         System.out.println("Enter gender : ");
         gender = scanner.next();
-        return person;
+
+        return new Person(name,surname,age,gender);
     }
 
     void choice() {
@@ -83,7 +84,6 @@ public class Person {
 
         for (int i = 0; i < persons.length; i++) {
             System.out.println(i + 1 + "st registration!");
-
             persons[i] = fillAndGetPersons();
         }
     }
