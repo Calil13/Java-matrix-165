@@ -12,11 +12,11 @@ public class XandOGame {
         while (true) {
             System.out.println();
             System.out.println("Player 1 coordinates!(X)");
-            System.out.print("Enter your Line coordinate(0-2) : ");
-            int line1 = scanner.nextInt();
+            System.out.print("Enter your Line coordinate(1-3) : ");
+            int line1 = scanner.nextInt() - 1;
 
-            System.out.print("Enter your Column coordinate(0-2) : ");
-            int column = scanner.nextInt();
+            System.out.print("Enter your Column coordinate(1-3) : ");
+            int column = scanner.nextInt() - 1;
 
             if (xo[line1][column] == ' ') {
                 xo[line1][column] = 'X';
@@ -32,11 +32,11 @@ public class XandOGame {
                 }
                 System.out.println();
             }
-            if (check(xo) == 'X'){
-                System.out.println("Player 1 (X) wins!");
+            if (check(xo) == 'X') {
+                System.out.println("Player 1 (X) is wins!");
                 break;
             }
-            if (count == 9){
+            if (count == 9) {
                 System.out.println("Game over!");
                 break;
             }
@@ -45,10 +45,10 @@ public class XandOGame {
 
             System.out.println("Player 2 coordinates!(O)");
             System.out.print("Enter your Line coordinate(0-2) : ");
-            int line2 = scanner.nextInt();
+            int line2 = scanner.nextInt() - 1;
 
             System.out.print("Enter your Column coordinate(0-2) : ");
-            int column2 = scanner.nextInt();
+            int column2 = scanner.nextInt() - 1;
 
             if (xo[line2][column2] == ' ') {
                 xo[line2][column2] = 'O';
@@ -64,11 +64,11 @@ public class XandOGame {
                 }
                 System.out.println();
             }
-            if (check(xo) == 'O'){
-                System.out.println("Player 2 (O) wins!" );
+            if (check(xo) == 'O') {
+                System.out.println("Player 2 (O) is wins!");
                 break;
             }
-            if (count == 9){
+            if (count == 9) {
                 System.out.println("Game over!");
                 break;
             }

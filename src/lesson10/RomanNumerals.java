@@ -1,7 +1,5 @@
 package lesson10;
 
-import java.util.Scanner;
-
 public class RomanNumerals {
     int getValue(char ch) {
         int value = switch (ch) {

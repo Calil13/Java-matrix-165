@@ -15,12 +15,10 @@ public class Task3 {
         char[] txtCh = txt.toCharArray();
 
         for (int i = 0; i < txtCh.length; i++) {
-            char temp = txtCh[i];
             for (int j = 0; j < txtCh.length; j++) {
-//                if (txtCh[i] == txtCh[j]){
-//                    String word;
-//                    word = txtCh[j];
-//                }
+                if (txtCh[i] == txtCh[j]) {
+
+                }
             }
         }
     }
