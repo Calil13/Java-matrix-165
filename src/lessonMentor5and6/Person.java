@@ -28,6 +28,7 @@ public class Person {
                     "\nSurname : " + persons[i].surname +
                     "\nAge  : " + persons[i].age +
                     "\nGender : " + persons[i].gender);
+            System.out.println("--------------");
             System.out.println();
         }
     }
@@ -45,6 +46,8 @@ public class Person {
         System.out.println("Enter gender : ");
         gender = scanner.next();
 
+        System.out.println("--------------");
+
         return new Person(name,surname,age,gender);
     }
 
@@ -60,6 +63,7 @@ public class Person {
 
             System.out.print("Your choice - ");
             int check = scanner.nextInt();
+            System.out.println();
 
             switch (check) {
                 case 1:
@@ -81,6 +85,8 @@ public class Person {
         System.out.print("Enter number of person : ");
         int num = scanner.nextInt();
         persons = new Person[num];
+
+        System.out.println();
 
         for (int i = 0; i < persons.length; i++) {
             System.out.println(i + 1 + "st registration!");
