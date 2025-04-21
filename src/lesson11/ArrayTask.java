@@ -1,6 +1,6 @@
-package Tasks;
+package lesson11;
 
-public class Task2 {
+public class ArrayTask {
     int arrays(int[] array1, int[] array2){
         //Input: l1 = [2,4,3], l2 = [5,6,4]
         //Output: [7,0,8]
@@ -17,11 +17,5 @@ public class Task2 {
             arrNum2 = arrNum2 * 10 + array2[j];
         }
         return arrNum1 + arrNum2;
-    }
-
-    public static void main(String[] args) {
-        Task2 t = new Task2();
-        int result = t.arrays(new int[]{1, 2, 3}, new int[]{4, 5, 6});
-        System.out.println(result);
     }
 }
