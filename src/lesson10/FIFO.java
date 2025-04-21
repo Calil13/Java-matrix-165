@@ -1,8 +1,9 @@
 package lesson10;
 
-public class FILO {
+public class FIFO {
     int[] arr = new int[10];
     int index = 0;
+    int temp = 0;
 
     void set(int num) {
         if (index < arr.length) {
@@ -14,10 +15,9 @@ public class FILO {
     }
 
     void get() {
-        if (index > 0) {
-            int value = arr[--index];
-            System.out.println("Value : " + value);
-        } else {
+        if (temp < index) {
+            System.out.println("Popped: " + arr[temp++]);
+        }else {
             System.out.println("Stack is empty!");
         }
     }
