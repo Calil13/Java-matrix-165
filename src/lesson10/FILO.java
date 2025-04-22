@@ -13,12 +13,14 @@ public class FILO {
         }
     }
 
-    void get() {
+    int get() {
         if (index > 0) {
             int value = arr[--index];
             System.out.println("Value : " + value);
+            return value;
         } else {
             System.out.println("Stack is empty!");
+            return -1;
         }
     }
 }

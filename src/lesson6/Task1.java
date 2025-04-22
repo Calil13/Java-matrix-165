@@ -22,8 +22,6 @@ public class Task1 {
             System.out.println("Enter the numbers! (Enter -1 to stop)");
             num = scanner.nextInt();
 
-            String stop = scanner.nextLine();
-
             if (num == -1){
                 break;
             } else if (count == arr.length) {
