@@ -9,46 +9,37 @@ public class Person {
     String name;
     String surname;
     int age;
-    String gender;
+    boolean gender;
 
-    Person(String name, String surname, int age, String gender) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.gender = gender;
-    }
-
-    public Person() {
-
-    }
 
     void printInfo() {
         for (int i = 0; i < persons.length; i++) {
             System.out.println("Name : " + persons[i].name +
                     "\nSurname : " + persons[i].surname +
                     "\nAge  : " + persons[i].age +
-                    "\nGender : " + persons[i].gender);
+                    "\nGender : " + (persons[i].gender ? "Male" : "Female"));
             System.out.println("--------------");
             System.out.println();
         }
     }
 
     Person fillAndGetPersons() {
+        Person person = new Person();
         System.out.println("Enter Name : ");
-        name = scanner.next();
+        person.name = scanner.next();
 
         System.out.println("Enter Surname : ");
-        surname = scanner.next();
+        person.surname = scanner.next();
 
         System.out.println("Enter age : ");
-        age = scanner.nextInt();
+        person.age = scanner.nextInt();
 
         System.out.println("Enter gender : ");
-        gender = scanner.next();
+        person.gender = scanner.nextBoolean();
 
         System.out.println("--------------");
 
-        return new Person(name,surname,age,gender);
+        return person;
     }
 
     void choice() {
