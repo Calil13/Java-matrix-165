@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PersonCall {
     public static void main(String[] args) {
-        Person person = new Person();
-        person.choice();
+        PersonOperation personOperation = new PersonOperation();
+        personOperation.choice();
     }
 }
