@@ -1,4 +1,4 @@
-package lessonMentor5and6;
+package lessonMentor5$6$7;
 
 import java.util.Scanner;
 

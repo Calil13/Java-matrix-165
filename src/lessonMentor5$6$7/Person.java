@@ -1,6 +1,4 @@
-package lessonMentor5and6;
-
-import java.util.Scanner;
+package lessonMentor5$6$7;
 
 public class Person {
     String name;
