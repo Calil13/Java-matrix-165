@@ -1,11 +1,11 @@
 package lesson13;
 
 public class Cat extends Animal {
-    void meow(){
+    void meow() {
         System.out.println("Meow");
     }
 
-    Cat(int age, int legs){
-        super(age, legs);
+    Cat(String name, int age, int legs) {
+        super(name, age, legs);
     }
 }
