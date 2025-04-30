@@ -17,7 +17,9 @@ public class Animal {
                 "\nLegs : " + legs);
     }
 
-//    boolean equals(String name, int age) {
-//
-//    }
+    void equals(Animal animal) {
+        if (name == animal.name && age == animal.age){
+            System.out.println("Same!");
+        }
+    }
 }

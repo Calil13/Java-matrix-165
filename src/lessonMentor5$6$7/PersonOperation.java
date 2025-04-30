@@ -6,20 +6,6 @@ public class PersonOperation {
     static Person[] persons = null;
     Scanner scanner = new Scanner(System.in);
 
-    void printInfo() {
-        for (int i = 0; i < persons.length; i++) {
-            if (persons[i] != null) {
-                System.out.println((i + 1) + "." +
-                        "\nName : " + persons[i].name +
-                        "\nSurname : " + persons[i].surname +
-                        "\nAge  : " + persons[i].age +
-                        "\nGender : " + (persons[i].gender ? "Male" : "Female"));
-                System.out.println("--------------");
-                System.out.println();
-            }
-        }
-    }
-
     Person fillAndGetPersons() {
         Person person = new Person();
         System.out.println("Enter Name : ");
@@ -31,7 +17,7 @@ public class PersonOperation {
         System.out.println("Enter age : ");
         person.age = scanner.nextInt();
 
-        System.out.println("Enter gender : ");
+        System.out.println("Enter gender(True - Male, False - Female) : ");
         person.gender = scanner.nextBoolean();
 
         System.out.println("--------------");
@@ -61,7 +47,7 @@ public class PersonOperation {
                     register();
                     break;
                 case 2:
-                    printInfo();
+                    showAll();
                     break;
                 case 3:
                     update();
@@ -76,7 +62,7 @@ public class PersonOperation {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice! Choose from 1 to 3.");
+                    System.out.println("Invalid choice! Choose from 1 to 6.");
             }
         }
     }
@@ -94,22 +80,73 @@ public class PersonOperation {
         }
     }
 
+    void showAll(){
+        int i = 1;
+        for (Person j : persons){
+            j.printInfo(i++);
+        }
+    }
+
     void update() {
         System.out.println("Which registration do you want to change?");
-        printInfo();
+        showAll();
         System.out.print("Answer : ");
         int index = scanner.nextInt();
         persons[--index] = fillAndGetPersons();
     }
 
+    void changeInfo(){
+        System.out.println("Which registration do you want to change?");
+        showAll();
+
+        System.out.print("Answer : ");
+        int index = scanner.nextInt();
+        index--;
+
+        System.out.println();
+
+        System.out.println("Which information in this registry do you want to change?");
+        System.out.print("1. Name" +
+                "\n2. Surname" +
+                "\n3. Age" +
+                "\n4. Gender");
+        System.out.println();
+        System.out.print("\nAnswer : ");
+        int info = scanner.nextInt();
+
+        Person person = persons[index];
+
+        switch (info){
+            case 1:
+                System.out.println("Enter Name : ");
+                person.name = scanner.next();
+                System.out.println("\n--------------");
+                break;
+            case 2:
+                System.out.println("Enter Surname : ");
+                person.surname = scanner.next();
+                System.out.println("\n--------------");
+                break;
+            case 3:
+                System.out.println("Enter age : ");
+                person.age = scanner.nextInt();
+                System.out.println("\n--------------");
+                break;
+            case 4:
+                System.out.println("Enter gender(True - Male, False - Female) : ");
+                person.gender = scanner.nextBoolean();
+                System.out.println("\n--------------");
+                break;
+            default:
+                System.out.println("Invalid choice! Choose from 1 to 4.");
+        }
+    }
+
     void delete() {
         System.out.println("Which registration do you want to delete?");
-        printInfo();
+        showAll();
         System.out.print("Answer : ");
         int index = scanner.nextInt();
         persons[--index] = null;
-    }
-    void changeInfo(){
-
     }
 }
