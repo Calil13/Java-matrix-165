@@ -32,8 +32,9 @@ public class PersonOperation {
                     "\n2 - Show all!" +
                     "\n3 - Update Informations!" +
                     "\n4 - Change Information!" +
-                    "\n5 - Delete Registration!" +
-                    "\n6 - Exit!"
+                    "\n5 - Search Information!" +
+                    "\n6 - Delete Registration!" +
+                    "\n7 - Exit!"
             );
 
             System.out.println();
@@ -56,13 +57,16 @@ public class PersonOperation {
                     changeInfo();
                     break;
                 case 5:
-                    delete();
+                    searchInfo();
                     break;
                 case 6:
+                    delete();
+                    break;
+                case 7:
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice! Choose from 1 to 6.");
+                    System.out.println("Invalid choice! Choose from 1 to 7.");
             }
         }
     }
@@ -80,9 +84,9 @@ public class PersonOperation {
         }
     }
 
-    void showAll(){
+    void showAll() {
         int i = 1;
-        for (Person j : persons){
+        for (Person j : persons) {
             j.printInfo(i++);
         }
     }
@@ -95,13 +99,12 @@ public class PersonOperation {
         persons[--index] = fillAndGetPersons();
     }
 
-    void changeInfo(){
+    void changeInfo() {
         System.out.println("Which registration do you want to change?");
         showAll();
 
         System.out.print("Answer : ");
         int index = scanner.nextInt();
-        index--;
 
         System.out.println();
 
@@ -114,9 +117,9 @@ public class PersonOperation {
         System.out.print("\nAnswer : ");
         int info = scanner.nextInt();
 
-        Person person = persons[index];
+        Person person = persons[--index];
 
-        switch (info){
+        switch (info) {
             case 1:
                 System.out.println("Enter Name : ");
                 person.name = scanner.next();
@@ -136,6 +139,62 @@ public class PersonOperation {
                 System.out.println("Enter gender(True - Male, False - Female) : ");
                 person.gender = scanner.nextBoolean();
                 System.out.println("\n--------------");
+                break;
+            default:
+                System.out.println("Invalid choice! Choose from 1 to 4.");
+        }
+    }
+
+    void searchInfo() {
+        System.out.println("Which information do you want to search for?");
+        System.out.print("1. Name" +
+                "\n2. Surname" +
+                "\n3. Age" +
+                "\n4. Gender");
+        System.out.println();
+        System.out.print("\nAnswer : ");
+        int info = scanner.nextInt();
+
+        switch (info) {
+            case 1:
+                System.out.print("Enter Name : ");
+                String name = scanner.next();
+                System.out.println("\n--------------");
+                for (int i = 0; i < persons.length; i++){
+                    if (persons[i].name.equals(name)){
+                        persons[i].printInfo(i + 1);
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("Enter Surname : ");
+                String surname = scanner.next();
+                System.out.println("\n--------------");
+                for (int i = 0; i < persons.length; i++){
+                    if (persons[i].surname.equals(surname)){
+                        persons[i].printInfo(i + 1);
+                    }
+                }
+                break;
+            case 3:
+                System.out.print("Enter age : ");
+                int age = scanner.nextInt();
+                System.out.println("\n--------------");
+                for (int i = 0; i < persons.length; i++){
+                    if (persons[i].age == age){
+                        persons[i].printInfo(i + 1);
+                    }
+                }
+                break;
+            case 4:
+                System.out.print("Enter Gender : ");
+                boolean gender = scanner.nextBoolean();
+                System.out.println("\n--------------");
+                for (int i = 0; i < persons.length; i++){
+                    if (persons[i].gender == gender){
+                        persons[i].printInfo(i + 1);
+                    }
+                }
                 break;
             default:
                 System.out.println("Invalid choice! Choose from 1 to 4.");
