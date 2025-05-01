@@ -87,7 +87,9 @@ public class PersonOperation {
     void showAll() {
         int i = 1;
         for (Person j : persons) {
-            j.printInfo(i++);
+            if (j != null){
+                j.printInfo(i++);
+            }
         }
     }
 
