@@ -9,9 +9,12 @@ public class Cat extends Animal {
         super(name, age, legs);
     }
 
-    boolean equals(Cat cat) {
-        if (cat.name == this.name && cat.age == this.age) {
-            return true;
+    public boolean equals(Object obj) {
+        if (obj instanceof Cat) {
+            Cat cat = (Cat) obj;
+            if (cat.name == this.name && cat.age == this.age) {
+                return true;
+            }
         }
         return false;
     }
