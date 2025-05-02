@@ -1,4 +1,4 @@
-package lessonMentor5$6$7;
+package lessonMentor5$8;
 
 import java.util.Scanner;
 
@@ -33,8 +33,9 @@ public class PersonOperation {
                     "\n3 - Update Informations!" +
                     "\n4 - Change Information!" +
                     "\n5 - Search Information!" +
-                    "\n6 - Delete Registration!" +
-                    "\n7 - Exit!"
+                    "\n6 - Search By Key!" +
+                    "\n7 - Delete Registration!" +
+                    "\n8 - Exit!"
             );
 
             System.out.println();
@@ -60,9 +61,12 @@ public class PersonOperation {
                     searchInfo();
                     break;
                 case 6:
+//                    searchByKey();
+//                    break;
+                case 7:
                     delete();
                     break;
-                case 7:
+                case 8:
                     System.exit(0);
                     break;
                 default:

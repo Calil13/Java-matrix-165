@@ -11,15 +11,9 @@ public class Animal {
         this.legs = legs;
     }
 
-    void string() {
-        System.out.println("Name : " + name +
+    public String toString() {
+        return "Name : " + name +
                 "\nAge : " + age +
-                "\nLegs : " + legs);
-    }
-
-    void equals(Animal animal) {
-        if (name == animal.name && age == animal.age){
-            System.out.println("Same!");
-        }
+                "\nLegs : " + legs;
     }
 }

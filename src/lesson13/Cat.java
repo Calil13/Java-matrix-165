@@ -9,17 +9,11 @@ public class Cat extends Animal {
         super(name, age, legs);
     }
 
-    public String toString() {
-        return "Name : " + name + "\n" +  "Age : " + age + "\n" + "Legs : " + legs;
-    }
-
-    public boolean equals(Object obj){
-        if (obj instanceof Cat){
-            Cat cat = (Cat) obj;
-            if (cat.name == this.name && cat.age == this.age && cat.legs == this.legs){
-                return true;
-            }
+    boolean equals(Cat cat) {
+        if (cat.name == this.name && cat.age == this.age) {
+            return true;
         }
         return false;
     }
 }
+
