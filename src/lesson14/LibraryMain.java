@@ -6,7 +6,7 @@ public class LibraryMain {
     public static void main(String[] args) {
         Library library = new Library();
 
-        Book book1 = new Book("Xxx", "Yyy");
+        Book book1 = new Book("Aaa", "Bbb");
         Book book2 = new Book("Zzz", "Ccc");
 
         library.addBook(book1);
