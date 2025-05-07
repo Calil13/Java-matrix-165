@@ -1,23 +1,24 @@
-package lesson14;
+package lesson15;
 
 public class Library {
     Book[] books = new Book[100];
     int count = 0;
 
-    void addBook(Book book) {
+    public void addBook(Book book) {
         if (count < 100) {
             books[count] = book;
             count++;
-            System.out.println(book.name + "," + book.author + " - Book added!");
+            System.out.println(book.getName() + "," + book.getAuthor() + " - Book added!");
         } else {
             System.out.println("Library is Full!");
         }
     }
 
-    void takeBook(String name) {
+    public void takeBook(String name) {
         System.out.println();
         for (Book book : books) {
-            if (book.name.equals(name) && book.isAvailable) {
+            if(book == null) break;
+            if (book.getName().equals(name) && book.isAvailable) {
                 book.isAvailable = false;
                 System.out.println("Book was Taken! : " + name);
                 System.out.println();
@@ -29,10 +30,11 @@ public class Library {
         }
     }
 
-    void returnBook(String name) {
+    public void returnBook(String name) {
         System.out.println();
         for (Book book : books) {
-            if (book.name.equals(name) && !book.isAvailable) {
+            if(book == null) break;
+            if (book.getAuthor().equals(name) && !book.isAvailable) {
                 book.isAvailable = true;
                 System.out.println("Book was returned : " + name);
                 System.out.println();
@@ -44,7 +46,7 @@ public class Library {
         }
     }
 
-    void availableBook() {
+    public void availableBook() {
         System.out.println("Available books : ");
         for (int i = 0; i < count; i++) {
             if (books[i].isAvailable) {

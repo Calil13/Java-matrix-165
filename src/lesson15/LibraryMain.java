@@ -1,6 +1,4 @@
-package lesson14;
-
-import java.util.Arrays;
+package lesson15;
 
 public class LibraryMain {
     public static void main(String[] args) {
@@ -12,11 +10,11 @@ public class LibraryMain {
         library.addBook(book1);
         library.addBook(book2);
 
-        library.takeBook("Xxx");
+        library.takeBook("Aaa");
 
         library.availableBook();
 
-        library.returnBook("Xxx");
+        library.returnBook("Aaa");
 
         library.availableBook();
     }

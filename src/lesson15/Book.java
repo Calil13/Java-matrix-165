@@ -1,9 +1,17 @@
-package lesson14;
+package lesson15;
 
 public class Book {
-    String name;
-    String author;
+    private String name;
+    private String author;
     boolean isAvailable;
+
+    public String getName(){
+        return name;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
 
     Book(String name, String author){
         this.name = name;
