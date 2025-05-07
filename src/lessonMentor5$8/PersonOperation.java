@@ -92,7 +92,7 @@ public class PersonOperation {
     void showAll() {
         int i = 1;
         for (Person j : persons) {
-            if (j != null){
+            if (j != null) {
                 j.printInfo(i++);
             }
         }
@@ -167,8 +167,8 @@ public class PersonOperation {
                 System.out.print("Enter Name : ");
                 String name = scanner.next();
                 System.out.println("\n--------------");
-                for (int i = 0; i < persons.length; i++){
-                    if (persons[i].name.equals(name)){
+                for (int i = 0; i < persons.length; i++) {
+                    if (persons[i].name.equals(name)) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -177,8 +177,8 @@ public class PersonOperation {
                 System.out.print("Enter Surname : ");
                 String surname = scanner.next();
                 System.out.println("\n--------------");
-                for (int i = 0; i < persons.length; i++){
-                    if (persons[i].surname.equals(surname)){
+                for (int i = 0; i < persons.length; i++) {
+                    if (persons[i].surname.equals(surname)) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -187,8 +187,8 @@ public class PersonOperation {
                 System.out.print("Enter age : ");
                 int age = scanner.nextInt();
                 System.out.println("\n--------------");
-                for (int i = 0; i < persons.length; i++){
-                    if (persons[i].age == age){
+                for (int i = 0; i < persons.length; i++) {
+                    if (persons[i].age == age) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -197,8 +197,8 @@ public class PersonOperation {
                 System.out.print("Enter Gender : ");
                 boolean gender = scanner.nextBoolean();
                 System.out.println("\n--------------");
-                for (int i = 0; i < persons.length; i++){
-                    if (persons[i].gender == gender){
+                for (int i = 0; i < persons.length; i++) {
+                    if (persons[i].gender == gender) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -208,7 +208,7 @@ public class PersonOperation {
         }
     }
 
-    void searchByWords(){
+    void searchByWords() {
         Person[] person = new Person[persons.length];
 
         System.out.println("Enter the Starting Word you want to Search for!");
@@ -216,11 +216,11 @@ public class PersonOperation {
         String search = scanner.next();
 
         for (int i = 0; i < persons.length; i++) {
-            if (persons[i].name.startsWith(search) || persons[i].surname.startsWith(search)){
+            if (persons[i].name.startsWith(search) || persons[i].surname.startsWith(search)) {
                 person[i] = persons[i];
+                person[i].printInfo(i + 1);
             }
         }
-        System.out.println(Arrays.toString(person));
     }
 
     void delete() {
