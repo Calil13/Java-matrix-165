@@ -1,5 +1,6 @@
 package lessonMentor5$8;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PersonOperation {
@@ -33,7 +34,7 @@ public class PersonOperation {
                     "\n3 - Update Informations!" +
                     "\n4 - Change Information!" +
                     "\n5 - Search Information!" +
-                    "\n6 - Search By Key!" +
+                    "\n6 - Search By Start Words!" +
                     "\n7 - Delete Registration!" +
                     "\n8 - Exit!"
             );
@@ -61,8 +62,8 @@ public class PersonOperation {
                     searchInfo();
                     break;
                 case 6:
-//                    searchByKey();
-//                    break;
+                    searchByWords();
+                    break;
                 case 7:
                     delete();
                     break;
@@ -205,6 +206,21 @@ public class PersonOperation {
             default:
                 System.out.println("Invalid choice! Choose from 1 to 4.");
         }
+    }
+
+    void searchByWords(){
+        Person[] person = new Person[persons.length];
+
+        System.out.println("Enter the Starting Word you want to Search for!");
+        System.out.print("Answer : ");
+        String search = scanner.next();
+
+        for (int i = 0; i < persons.length; i++) {
+            if (persons[i].name.startsWith(search) || persons[i].surname.startsWith(search)){
+                person[i] = persons[i];
+            }
+        }
+        System.out.println(Arrays.toString(person));
     }
 
     void delete() {
