@@ -1,6 +1,5 @@
 package lessonMentor5$8;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class PersonOperation {
@@ -62,7 +61,7 @@ public class PersonOperation {
                     searchInfo();
                     break;
                 case 6:
-                    searchByWords();
+                    searchByStartWords();
                     break;
                 case 7:
                     delete();
@@ -208,7 +207,7 @@ public class PersonOperation {
         }
     }
 
-    void searchByWords() {
+    void searchByStartWords() {
         Person[] person = new Person[persons.length];
 
         System.out.println("Enter the Starting Word you want to Search for!");
