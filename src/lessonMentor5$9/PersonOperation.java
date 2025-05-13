@@ -109,7 +109,7 @@ public class PersonOperation {
         persons[--index] = fillAndGetPersons();
     }
 
-    void update2(){
+    void update2() {
         System.out.println("Which registration do you want to change?");
         showAll();
         System.out.print("Answer : ");
@@ -128,33 +128,24 @@ public class PersonOperation {
 
         for (String s : array) {
             String space = s.trim();
-            boolean check = false;
 
             if (space.equalsIgnoreCase("name")) {
                 System.out.println("Enter Name : ");
                 person.name = scanner.next();
-                check = true;
 
-            }
-            if (space.equalsIgnoreCase("surname")) {
+            } else if (space.equalsIgnoreCase("surname")) {
                 System.out.println("Enter surname : ");
                 person.surname = scanner.next();
-                check = true;
 
-            }
-            if (space.equalsIgnoreCase("age")) {
+            } else if (space.equalsIgnoreCase("age")) {
                 System.out.println("Enter age : ");
                 person.age = scanner.nextInt();
-                check = true;
 
-            }
-            if (space.equalsIgnoreCase("gender")) {
+            } else if (space.equalsIgnoreCase("gender")) {
                 System.out.println("Enter gender : ");
                 person.gender = scanner.nextBoolean();
-                check = true;
 
-            }
-            if (!check) {
+            } else {
                 System.out.println("Information is incorrect!");
             }
         }
