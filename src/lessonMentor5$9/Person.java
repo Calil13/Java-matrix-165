@@ -1,17 +1,17 @@
 package lessonMentor5$9;
 
 public class Person {
-    static String name;
-    static String surname;
-    static int age;
-    static boolean gender;
+    String name;
+    String surname;
+    int age;
+    boolean gender;
 
     void printInfo(int i) {
         System.out.println(i + "." +
-                "\nName : " + name +
-                "\nSurname : " + surname +
-                "\nAge  : " + age +
-                "\nGender : " + (gender ? "Male" : "Female"));
+                "\nName : " + this.name +
+                "\nSurname : " + this.surname +
+                "\nAge  : " + this.age +
+                "\nGender : " + (this.gender ? "Male" : "Female"));
         System.out.println("--------------");
     }
 }

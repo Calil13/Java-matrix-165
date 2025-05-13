@@ -9,16 +9,16 @@ public class PersonOperation {
     Person fillAndGetPersons() {
         Person person = new Person();
         System.out.println("Enter Name : ");
-        Person.name = scanner.next();
+        person.name = scanner.next();
 
         System.out.println("Enter Surname : ");
-        Person.surname = scanner.next();
+        person.surname = scanner.next();
 
         System.out.println("Enter age : ");
-        Person.age = scanner.nextInt();
+        person.age = scanner.nextInt();
 
         System.out.println("Enter gender(True - Male, False - Female) : ");
-        Person.gender = scanner.nextBoolean();
+        person.gender = scanner.nextBoolean();
 
         System.out.println("--------------");
 
@@ -114,33 +114,44 @@ public class PersonOperation {
         showAll();
         System.out.print("Answer : ");
         int index = scanner.nextInt();
+        Person person = persons[--index];
 
         System.out.println();
 
         System.out.println("Which information in this registry do you want to change? " +
                 "(name, surname, age, gender)");
 
-        String changeInfo = scanner.next();
+        System.out.print("Answer : ");
+        scanner.nextLine();
+        String changeInfo = scanner.nextLine();
         String[] array = changeInfo.split(",");
 
-        while (true) {
-            for (String s : array) {
-                if (s.equals("name")) {
-                    System.out.println("Enter Name : ");
-                    Person.name = scanner.next();
-                }
-                if (s.equals("surname")) {
-                    System.out.println("Enter Surname : ");
-                    Person.surname = scanner.next();
-                }
-                if (s.equals("age")) {
-                    System.out.println("Enter Age : ");
-                    Person.age = scanner.nextInt();
-                }
-                if (s.equals("gender")) {
-                    System.out.println("Enter gender(True - Male, False - Female) : ");
-                    Person.gender = scanner.nextBoolean();
-                }
+        for (int i = 0; i < array.length; i++) {
+            String space = array[i].trim();
+            boolean check = false;
+
+            if (space.equalsIgnoreCase("name")){
+                System.out.println("Enter Name : ");
+                person.name = scanner.next();
+                check = true;
+
+            }if (space.equalsIgnoreCase("surname")){
+                System.out.println("Enter surname : ");
+                person.surname = scanner.next();
+                check = true;
+
+            }if (space.equalsIgnoreCase("age")){
+                System.out.println("Enter age : ");
+                person.age = scanner.nextInt();
+                check = true;
+
+            }if (space.equalsIgnoreCase("gender")){
+                System.out.println("Enter gender : ");
+                person.gender = scanner.nextBoolean();
+                check = true;
+
+            }if (!check) {
+                System.out.println("Information is incorrect!");
             }
         }
     }
