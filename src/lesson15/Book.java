@@ -5,8 +5,16 @@ public class Book {
     private String author;
     boolean isAvailable;
 
+    public void setName(){
+        this.name = name;
+    }
+
     public String getName(){
         return name;
+    }
+
+    public void setAuthor(){
+        this.author = author;
     }
 
     public String getAuthor(){

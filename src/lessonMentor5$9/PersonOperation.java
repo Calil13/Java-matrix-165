@@ -9,16 +9,16 @@ public class PersonOperation {
     Person fillAndGetPersons() {
         Person person = new Person();
         System.out.println("Enter Name : ");
-        person.name = scanner.next();
+        Person.name = scanner.next();
 
         System.out.println("Enter Surname : ");
-        person.surname = scanner.next();
+        Person.surname = scanner.next();
 
         System.out.println("Enter age : ");
-        person.age = scanner.nextInt();
+        Person.age = scanner.nextInt();
 
         System.out.println("Enter gender(True - Male, False - Female) : ");
-        person.gender = scanner.nextBoolean();
+        Person.gender = scanner.nextBoolean();
 
         System.out.println("--------------");
 
@@ -30,12 +30,13 @@ public class PersonOperation {
             System.out.println("What do you want to do?");
             System.out.println("1 - Register " +
                     "\n2 - Show all!" +
-                    "\n3 - Update Informations!" +
-                    "\n4 - Change Information!" +
-                    "\n5 - Search Information!" +
-                    "\n6 - Search By Start Words!" +
-                    "\n7 - Delete Registration!" +
-                    "\n8 - Exit!"
+                    "\n3 - Update Information!" +
+                    "\n4 - Update Information2!" +
+                    "\n5 - Change Information!" +
+                    "\n6 - Search Information!" +
+                    "\n7 - Search By Start Words!" +
+                    "\n8 - Delete Registration!" +
+                    "\n9 - Exit!"
             );
 
             System.out.println();
@@ -55,18 +56,21 @@ public class PersonOperation {
                     update();
                     break;
                 case 4:
-                    changeInfo();
+                    update2();
                     break;
                 case 5:
-                    searchInfo();
+                    changeInfo();
                     break;
                 case 6:
-                    searchByStartWords();
+                    searchInfo();
                     break;
                 case 7:
-                    delete();
+                    searchByStartWords();
                     break;
                 case 8:
+                    delete();
+                    break;
+                case 9:
                     System.exit(0);
                     break;
                 default:
@@ -103,6 +107,42 @@ public class PersonOperation {
         System.out.print("Answer : ");
         int index = scanner.nextInt();
         persons[--index] = fillAndGetPersons();
+    }
+
+    void update2(){
+        System.out.println("Which registration do you want to change?");
+        showAll();
+        System.out.print("Answer : ");
+        int index = scanner.nextInt();
+
+        System.out.println();
+
+        System.out.println("Which information in this registry do you want to change? " +
+                "(name, surname, age, gender)");
+
+        String changeInfo = scanner.next();
+        String[] array = changeInfo.split(",");
+
+        while (true) {
+            for (String s : array) {
+                if (s.equals("name")) {
+                    System.out.println("Enter Name : ");
+                    Person.name = scanner.next();
+                }
+                if (s.equals("surname")) {
+                    System.out.println("Enter Surname : ");
+                    Person.surname = scanner.next();
+                }
+                if (s.equals("age")) {
+                    System.out.println("Enter Age : ");
+                    Person.age = scanner.nextInt();
+                }
+                if (s.equals("gender")) {
+                    System.out.println("Enter gender(True - Male, False - Female) : ");
+                    Person.gender = scanner.nextBoolean();
+                }
+            }
+        }
     }
 
     void changeInfo() {

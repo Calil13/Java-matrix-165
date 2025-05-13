@@ -2,6 +2,7 @@ package lesson15;
 
 public class Library {
     Book[] books = new Book[100];
+    Users[] users = new Users[100];
     int count = 0;
 
     public void addBook(Book book) {
@@ -14,14 +15,14 @@ public class Library {
         }
     }
 
-    public void takeBook(String name) {
+    public void takeBook(String name, Users user) {
         System.out.println();
         for (Book book : books) {
-            if(book == null) break;
+            if (book == null) break;
             if (book.getName().equals(name) && book.isAvailable) {
                 book.isAvailable = false;
-                System.out.println("Book was Taken! : " + name);
-                System.out.println();
+                user.addUserBook(book);
+                System.out.println(user.name + " Took it! : " + name);
                 return;
             } else {
                 System.out.println("There is no such book!");
@@ -30,12 +31,13 @@ public class Library {
         }
     }
 
-    public void returnBook(String name) {
+    public void returnBook(String name, Users user) {
         System.out.println();
         for (Book book : books) {
-            if(book == null) break;
-            if (book.getAuthor().equals(name) && !book.isAvailable) {
+            if (book == null) break;
+            if (book.getName().equals(name) && !book.isAvailable) {
                 book.isAvailable = true;
+                user.deletBook(name);
                 System.out.println("Book was returned : " + name);
                 System.out.println();
                 return;
@@ -47,6 +49,7 @@ public class Library {
     }
 
     public void availableBook() {
+        System.out.println();
         System.out.println("Available books : ");
         for (int i = 0; i < count; i++) {
             if (books[i].isAvailable) {
