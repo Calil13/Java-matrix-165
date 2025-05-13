@@ -126,31 +126,35 @@ public class PersonOperation {
         String changeInfo = scanner.nextLine();
         String[] array = changeInfo.split(",");
 
-        for (int i = 0; i < array.length; i++) {
-            String space = array[i].trim();
+        for (String s : array) {
+            String space = s.trim();
             boolean check = false;
 
-            if (space.equalsIgnoreCase("name")){
+            if (space.equalsIgnoreCase("name")) {
                 System.out.println("Enter Name : ");
                 person.name = scanner.next();
                 check = true;
 
-            }if (space.equalsIgnoreCase("surname")){
+            }
+            if (space.equalsIgnoreCase("surname")) {
                 System.out.println("Enter surname : ");
                 person.surname = scanner.next();
                 check = true;
 
-            }if (space.equalsIgnoreCase("age")){
+            }
+            if (space.equalsIgnoreCase("age")) {
                 System.out.println("Enter age : ");
                 person.age = scanner.nextInt();
                 check = true;
 
-            }if (space.equalsIgnoreCase("gender")){
+            }
+            if (space.equalsIgnoreCase("gender")) {
                 System.out.println("Enter gender : ");
                 person.gender = scanner.nextBoolean();
                 check = true;
 
-            }if (!check) {
+            }
+            if (!check) {
                 System.out.println("Information is incorrect!");
             }
         }
