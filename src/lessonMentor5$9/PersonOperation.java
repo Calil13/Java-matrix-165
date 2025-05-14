@@ -9,16 +9,20 @@ public class PersonOperation {
     Person fillAndGetPersons() {
         Person person = new Person();
         System.out.println("Enter Name : ");
-        person.name = scanner.next();
+        String name = scanner.next();
+        person.setName(name);
 
         System.out.println("Enter Surname : ");
-        person.surname = scanner.next();
+        String surname = scanner.next();
+        person.setSurname(surname);
 
         System.out.println("Enter age : ");
-        person.age = scanner.nextInt();
+        int age = scanner.nextInt();
+        person.setAge(age);
 
         System.out.println("Enter gender(True - Male, False - Female) : ");
-        person.gender = scanner.nextBoolean();
+        boolean gender = scanner.nextBoolean();
+        person.setGender(gender);
 
         System.out.println("--------------");
 
@@ -131,19 +135,23 @@ public class PersonOperation {
 
             if (space.equalsIgnoreCase("name")) {
                 System.out.println("Enter Name : ");
-                person.name = scanner.next();
+                String name = scanner.next();
+                person.setName(name);
 
             } else if (space.equalsIgnoreCase("surname")) {
                 System.out.println("Enter surname : ");
-                person.surname = scanner.next();
+                String surname = scanner.next();
+                person.setSurname(surname);
 
             } else if (space.equalsIgnoreCase("age")) {
                 System.out.println("Enter age : ");
-                person.age = scanner.nextInt();
+                int age = scanner.nextInt();
+                person.setAge(age);
 
             } else if (space.equalsIgnoreCase("gender")) {
                 System.out.println("Enter gender : ");
-                person.gender = scanner.nextBoolean();
+                boolean gender = scanner.nextBoolean();
+                person.setGender(gender);
 
             } else {
                 System.out.println("Information is incorrect!");
@@ -174,22 +182,26 @@ public class PersonOperation {
         switch (info) {
             case 1:
                 System.out.println("Enter Name : ");
-                person.name = scanner.next();
+                String name = scanner.next();
+                person.setName(name);
                 System.out.println("\n--------------");
                 break;
             case 2:
                 System.out.println("Enter Surname : ");
-                person.surname = scanner.next();
+                String surname = scanner.next();
+                person.setSurname(surname);
                 System.out.println("\n--------------");
                 break;
             case 3:
                 System.out.println("Enter age : ");
-                person.age = scanner.nextInt();
+                int age = scanner.nextInt();
+                person.setAge(age);
                 System.out.println("\n--------------");
                 break;
             case 4:
                 System.out.println("Enter gender(True - Male, False - Female) : ");
-                person.gender = scanner.nextBoolean();
+                boolean gender = scanner.nextBoolean();
+                person.setGender(gender);
                 System.out.println("\n--------------");
                 break;
             default:
@@ -213,7 +225,7 @@ public class PersonOperation {
                 String name = scanner.next();
                 System.out.println("\n--------------");
                 for (int i = 0; i < persons.length; i++) {
-                    if (persons[i].name.equals(name)) {
+                    if (persons[i].getName().equals(name)) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -223,7 +235,7 @@ public class PersonOperation {
                 String surname = scanner.next();
                 System.out.println("\n--------------");
                 for (int i = 0; i < persons.length; i++) {
-                    if (persons[i].surname.equals(surname)) {
+                    if (persons[i].getSurname().equals(surname)) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -233,7 +245,7 @@ public class PersonOperation {
                 int age = scanner.nextInt();
                 System.out.println("\n--------------");
                 for (int i = 0; i < persons.length; i++) {
-                    if (persons[i].age == age) {
+                    if (persons[i].getAge() == age) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -243,7 +255,7 @@ public class PersonOperation {
                 boolean gender = scanner.nextBoolean();
                 System.out.println("\n--------------");
                 for (int i = 0; i < persons.length; i++) {
-                    if (persons[i].gender == gender) {
+                    if (persons[i].getGender() == gender) {
                         persons[i].printInfo(i + 1);
                     }
                 }
@@ -261,7 +273,7 @@ public class PersonOperation {
         String search = scanner.next();
 
         for (int i = 0; i < persons.length; i++) {
-            if (persons[i].name.startsWith(search) || persons[i].surname.startsWith(search)) {
+            if (persons[i].getName().startsWith(search) || persons[i].getSurname().startsWith(search)) {
                 person[i] = persons[i];
                 person[i].printInfo(i + 1);
             }

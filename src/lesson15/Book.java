@@ -5,7 +5,13 @@ public class Book {
     private String author;
     boolean isAvailable;
 
-    public void setName(){
+    public Book(String name, String author){
+        this.name = name;
+        this.author = author;
+        this.isAvailable = true;
+    }
+
+    public void setName(String name){
         this.name = name;
     }
 
@@ -13,18 +19,12 @@ public class Book {
         return name;
     }
 
-    public void setAuthor(){
+    public void setAuthor(String author){
         this.author = author;
     }
 
     public String getAuthor(){
         return author;
-    }
-
-    Book(String name, String author){
-        this.name = name;
-        this.author = author;
-        this.isAvailable = true;
     }
 
     void printInfo(){

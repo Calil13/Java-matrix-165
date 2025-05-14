@@ -17,7 +17,7 @@ public class Users {
         }
     }
 
-    public void deletBook(String bookName){
+    public void deleteBook(String bookName){
         for (int i = 0; i < countBook; i++) {
             if (books[i] != null && books[i].getName().equals(bookName)){
                 books[--countBook] = null;

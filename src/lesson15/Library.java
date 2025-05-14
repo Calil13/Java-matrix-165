@@ -37,7 +37,7 @@ public class Library {
             if (book == null) break;
             if (book.getName().equals(name) && !book.isAvailable) {
                 book.isAvailable = true;
-                user.deletBook(name);
+                user.deleteBook(name);
                 System.out.println("Book was returned : " + name);
                 System.out.println();
                 return;
