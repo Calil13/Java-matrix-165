@@ -1,13 +1,13 @@
 package lesson14;
 
-public class Rectangle extends Figure {
+public class Rectangle implements Figure {
     double a = 3, b = 4;
 
-    double perimeter() {
+    public double perimeter() {
         return 2 * (a + b);
     }
 
-    double area() {
+    public double area() {
         return a * b;
     }
 }

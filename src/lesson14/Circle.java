@@ -1,14 +1,14 @@
 package lesson14;
 
-public class Circle extends Figure{
+public class Circle implements Figure{
     double pi = 3.14;
     double radius = 4;
 
-    double perimeter() {
+    public double perimeter() {
         return 2 * pi * radius;
     }
 
-    double area() {
+    public double area() {
         return pi * (radius * radius);
     }
 }
