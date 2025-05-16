@@ -2,7 +2,7 @@ package lesson16;
 
 import lesson14.Figure;
 
-public abstract class Product {
+public abstract class Product implements Discountable{
     private String name;
     private double price;
 
