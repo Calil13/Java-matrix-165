@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.util.Scanner;
 
-public class Task {
+public class Task2 {
     //input1 : word1 = "abc", word2 = "qms"
     //output : [a q b m c s]
 
