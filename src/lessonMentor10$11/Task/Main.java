@@ -1,4 +1,4 @@
-package lessonMentor10.Task;
+package lessonMentor10$11.Task;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,8 +12,12 @@ public class Main {
         paymentMethod[1] = couponPayment;
         paymentMethod[2] = balancePayment;
 
-        for (PaymentMethod payment : paymentMethod){
-            payment.pay(20);
+        try {
+            for (PaymentMethod payment : paymentMethod) {
+                payment.pay(200);
+            }
+        } catch (NotEnoughPaymentException n) {
+            System.out.println(n.getMessage());
         }
     }
 }

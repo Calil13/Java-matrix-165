@@ -1,4 +1,4 @@
-package lessonMentor10.Task;
+package lessonMentor10$11.Task;
 
 public class CreditCardPayment extends PaymentMethod{
     public boolean pay(double amount){

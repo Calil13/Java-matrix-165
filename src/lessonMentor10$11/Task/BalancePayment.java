@@ -1,4 +1,4 @@
-package lessonMentor10.Task;
+package lessonMentor10$11.Task;
 
 public class BalancePayment extends PaymentMethod {
     private double balance = 100;
@@ -16,7 +16,7 @@ public class BalancePayment extends PaymentMethod {
             setBalance(getBalance() - amount);
             System.out.println(amount + " AZN balansdan ödənildi." + " Yeni balans: " + balance);
         } else {
-            System.out.println("Balans kifayət etmir");
+            throw new NotEnoughPaymentException("Balans kifayət etmir!");
         }
         return true;
     }

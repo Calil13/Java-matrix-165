@@ -1,6 +1,6 @@
-package lessonMentor10.Task;
+package lessonMentor10$11.Task;
 
-public class CouponPayment extends PaymentMethod{
+public class CouponPayment extends PaymentMethod {
     private double coupon = 50;
 
     public double getCoupon() {
@@ -11,12 +11,12 @@ public class CouponPayment extends PaymentMethod{
         this.coupon = coupon;
     }
 
-    public boolean pay(double amount){
-        if (getCoupon() >= amount){
+    public boolean pay(double amount) {
+        if (getCoupon() >= amount) {
             setCoupon(getCoupon() - amount);
             System.out.println(amount + " AZN kuponla ödənildi." + " Qalan kupon: " + coupon);
-        }else {
-            System.out.println("Kupon kifayət etmir!");
+        } else {
+            throw new NotEnoughPaymentException("Kupon kifayət etmir!");
         }
         return true;
     }
