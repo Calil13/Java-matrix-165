@@ -4,10 +4,10 @@ public class LibraryMain {
     public static void main(String[] args) {
         Library library = new Library();
 
-        Book book1 = new Book("Aaa", "Bbb");
-        Book book2 = new Book("Zzz", "Ccc");
+        Book book1 = new Book("Aaa", "Bbb", 12);
+        Book book2 = new Book("Zzz", "Ccc", 15);
 
-        Users user1 = new Users("User 1", 19);
+        Users user1 = new Users("User 1", 12);
         Users user2 = new Users("User 2", 19);
 
         library.addBook(book1);
@@ -16,6 +16,7 @@ public class LibraryMain {
         library.availableBook();
 
         library.takeBook("Aaa", user1);
+        library.takeBook("Zzz", user2);
 
         library.availableBook();
 

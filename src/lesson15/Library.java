@@ -1,5 +1,7 @@
 package lesson15;
 
+import lessonMentor10$11.User;
+
 public class Library {
     Book[] books = new Book[100];
     Users[] users = new Users[100];
@@ -9,7 +11,7 @@ public class Library {
         if (count < 100) {
             books[count] = book;
             count++;
-            System.out.println(book.getName() + "," + book.getAuthor() + " - Book added!");
+            System.out.println(book.getBookName() + "," + book.getAuthor() + " - Book added!");
         } else {
             System.out.println("Library is Full!");
         }
@@ -17,25 +19,37 @@ public class Library {
 
     public void takeBook(String name, Users user) {
         System.out.println();
+
+        if (isUserExists(user)) {
+            throw new ValidationException("User not found!");
+        }
+
         for (Book book : books) {
             if (book == null) break;
-            if (book.getName().equals(name) && book.isAvailable) {
+            if (book.getBookName().equals(name)) {
+                if (!book.isAvailable){
+                    throw new ValidationException("Book has already been taken!");
+                }
+
+                if (user.age < book.getPickUpAge()) {
+                    throw new ValidationException("Age is not enough");
+                }
+
                 book.isAvailable = false;
                 user.addUserBook(book);
-                System.out.println(user.name + " Took it! : " + name);
+                System.out.println(user.UserName + " Took it! : " + name);
                 return;
-            } else {
-                System.out.println("There is no such book!");
-                System.out.println();
             }
         }
+
+        throw new ValidationException("There is no such book!");
     }
 
     public void returnBook(String name, Users user) {
         System.out.println();
         for (Book book : books) {
             if (book == null) break;
-            if (book.getName().equals(name) && !book.isAvailable) {
+            if (book.getBookName().equals(name) && !book.isAvailable) {
                 book.isAvailable = true;
                 user.deleteBook(name);
                 System.out.println("Book was returned : " + name);
@@ -57,5 +71,13 @@ public class Library {
                 System.out.println("--------------");
             }
         }
+    }
+
+    private boolean isUserExists(Users user) {
+        for (Users u : users) {
+            if (u == null) break;
+            if (u.equals(user)) return true;
+        }
+        return false;
     }
 }

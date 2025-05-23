@@ -1,22 +1,24 @@
 package lesson15;
 
 public class Book {
-    private String name;
+    private String BookName;
     private String author;
+    private int pickUpAge;
     boolean isAvailable;
 
-    public Book(String name, String author){
-        this.name = name;
+    public Book(String name, String author, int pickUpAge){
+        this.BookName = name;
         this.author = author;
+        this.pickUpAge = pickUpAge;
         this.isAvailable = true;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setBookName(String bookName){
+        this.BookName = bookName;
     }
 
-    public String getName(){
-        return name;
+    public String getBookName(){
+        return BookName;
     }
 
     public void setAuthor(String author){
@@ -27,8 +29,16 @@ public class Book {
         return author;
     }
 
+    public void setPickUpAge(int pickUpAge) {
+        this.pickUpAge = pickUpAge;
+    }
+
+    public int getPickUpAge() {
+        return pickUpAge;
+    }
+
     void printInfo(){
-        System.out.println("Name of Book : " + name +
+        System.out.println("Name of Book : " + BookName +
                 "\nName of Author : " + author +
                 "\nAvailable : " + isAvailable);
     }
