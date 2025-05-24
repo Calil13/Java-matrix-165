@@ -8,10 +8,12 @@ public class Users {
 
     Users(String name, int age) {
         this.UserName = name;
-        this.age = age;
+
         if (age < 7){
             throw new ValidationException("Age less than 7!");
         }
+
+        this.age = age;
     }
 
     public String getUserName() {
