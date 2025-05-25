@@ -32,8 +32,5 @@ public class LibraryMain {
 
         user1.listMyBooks();
         user2.listMyBooks();
-
-        library.readBookFromFile();
-        library.readUserFromFile();
     }
 }
