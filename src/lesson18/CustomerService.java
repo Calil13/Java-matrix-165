@@ -13,7 +13,7 @@ public class CustomerService {
         }
     }
 
-    public Customer readCustomer() throws ClassNotFoundException {
+    public Customer readCustomer() {
         try (FileInputStream f = new FileInputStream("test.txt");
              ObjectInputStream o = new ObjectInputStream(f);
         ) {

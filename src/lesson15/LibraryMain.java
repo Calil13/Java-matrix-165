@@ -13,6 +13,9 @@ public class LibraryMain {
         library.addBook(book1);
         library.addBook(book2);
 
+        library.addUser(user1);
+        library.addUser(user2);
+
         library.availableBook();
 
         library.takeBook("Aaa", user1);
@@ -29,5 +32,8 @@ public class LibraryMain {
 
         user1.listMyBooks();
         user2.listMyBooks();
+
+        library.readBookFromFile();
+        library.readUserFromFile();
     }
 }

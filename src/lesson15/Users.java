@@ -1,6 +1,8 @@
 package lesson15;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
     Book[] books = new Book[100];
     String UserName;
     int age;

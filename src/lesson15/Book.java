@@ -1,6 +1,8 @@
 package lesson15;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private String BookName;
     private String author;
     private int pickUpAge;
