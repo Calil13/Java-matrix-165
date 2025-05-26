@@ -1,4 +1,4 @@
-package lessonMentor10$11.Task;
+package lessonMentor10$11.Task1;
 
 public class CouponPayment extends PaymentMethod {
     private double coupon = 50;
