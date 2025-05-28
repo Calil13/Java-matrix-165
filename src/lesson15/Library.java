@@ -94,7 +94,7 @@ public class Library {
     }
 
     public void readBookFromFile() {
-        try (ObjectInputStream inBook = new ObjectInputStream(new FileInputStream("booksRead.txt"))) {
+        try (ObjectInputStream inBook = new ObjectInputStream(new FileInputStream("books.txt"))) {
             books = (Book[]) inBook.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new ValidationException("Error loading books from file!");
@@ -110,7 +110,7 @@ public class Library {
     }
 
     public void readUserFromFile() {
-        try (ObjectInputStream inUser = new ObjectInputStream(new FileInputStream("usersRead.txt"))) {
+        try (ObjectInputStream inUser = new ObjectInputStream(new FileInputStream("users.txt"))) {
             users = (Users[]) inUser.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new ValidationException("Error loading users from file!");

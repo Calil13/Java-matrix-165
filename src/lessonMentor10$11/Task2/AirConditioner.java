@@ -1,15 +1,17 @@
 package lessonMentor10$11.Task2;
 
 public class AirConditioner implements Device{
-    private boolean isOn;
+    boolean isOn;
     private double temperature;
+    private String acName;
 
-    public boolean getIsOn() {
-        return isOn;
+    @Override
+    public String toString() {
+        return acName;
     }
 
-    public void setIsOn(boolean isOn) {
-        this.isOn = isOn;
+    public AirConditioner(String acName) {
+        this.acName = acName;
     }
 
     public double getTemperature() {
@@ -20,17 +22,21 @@ public class AirConditioner implements Device{
         this.temperature = temperature;
     }
 
-    void setTemperature() {
+    public boolean getIsOn() {
+        return isOn;
+    }
 
+    public void setIsOn(boolean isOn) {
+        this.isOn = isOn;
     }
 
     @Override
     public void turnOn() {
-
+        isOn = true;
     }
 
     @Override
     public void turnOff() {
-
+        isOn = false;
     }
 }
