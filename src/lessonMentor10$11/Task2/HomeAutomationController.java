@@ -12,7 +12,15 @@ public class HomeAutomationController {
     }
 
     void turnOnAllDevices() {
-
+        for (int i = 0; i < count; i++) {
+            if (devices[i] instanceof AirConditioner ac){
+                ac.setIsOn(true);
+                Logger.info(devices[i], ": ON");
+            } else if (devices[i] instanceof Light l) {
+                l.setIsOn(true);
+                Logger.info(devices[i], ": ON");
+            }
+        }
     }
 
     void setDeviceTemperature() {

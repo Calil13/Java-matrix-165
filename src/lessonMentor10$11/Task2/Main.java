@@ -12,7 +12,7 @@ public class Main {
 
         Command turnOnLight = new TurnOnCommand(light);
         Command turnOnAC = new TurnOnCommand(ac);
-        Command setTemp = new SetTemperatureCommand(ac, 21);
+        Command setTemp = new SetTemperatureCommand(ac, 22);
         Command offLight = new TurnOffCommand(light);
 
         turnOnLight.execute();
@@ -23,8 +23,11 @@ public class Main {
         controller.checkAllStatuses();
 
         DeviceStatusMonitor monitor = new DeviceStatusMonitor();
-        monitor.addDevice(light);
-        monitor.addDevice(ac);
-        monitor.checkStatuses();
+        monitor.checkStatuses(light);
+        monitor.checkStatuses(ac);
+
+        System.out.println("\nAll On!");
+        controller.turnOnAllDevices();
+        monitor.checkStatuses(light);
     }
 }

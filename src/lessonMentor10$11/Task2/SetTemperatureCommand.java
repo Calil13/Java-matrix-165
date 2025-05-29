@@ -16,7 +16,7 @@ public class SetTemperatureCommand implements Command {
     public void execute() {
         if (device instanceof AirConditioner ac) {
             ac.setTemperature(temperature);
-            Logger.info(device, " Temperature: " + temperature);
+            Logger.info(device, " Temperature: " + temperature + "°C");
         } else {
             Logger.error(device);
         }
