@@ -1,14 +1,12 @@
 package lessonMentor10$11.Task2;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 public class HomeAutomationController {
     Device[] devices = new Device[10];
     int count = 0;
 
     void registerDevice(Device register) {
-        devices[count++] = Logger.info(register, " registered.");
+        devices[count++] = register;
+        Logger.info(register, " registered.");
     }
 
     void turnOnAllDevices() {
@@ -25,8 +23,13 @@ public class HomeAutomationController {
         }
     }
 
-    void setDeviceTemperature() {
-
+    void setDeviceTemperature(Device device, double temperature) {
+        for (int i = 0; i < count; i++) {
+            if (devices[i] instanceof AirConditioner ac) {
+                ac.setTemperature(temperature);
+                Logger.info(devices[i], " New temperature " + temperature + "°C");
+            }
+        }
     }
 
     void checkAllStatuses() {
@@ -34,6 +37,5 @@ public class HomeAutomationController {
         for (int i = 0; i < count; i++) {
             Logger.success(devices[i], " success registered!");
         }
-        throw new ValidationException("Failed to register!");
     }
 }

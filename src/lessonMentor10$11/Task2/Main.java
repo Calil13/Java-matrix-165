@@ -29,5 +29,9 @@ public class Main {
         System.out.println("\nAll On!");
         controller.turnOnAllDevices();
         monitor.checkStatuses(light);
+
+        System.out.println();
+        controller.setDeviceTemperature(ac, 30);
+        monitor.checkStatuses(ac);
     }
 }

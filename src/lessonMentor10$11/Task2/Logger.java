@@ -5,9 +5,8 @@ import java.time.LocalDateTime;
 public class Logger {
     private static String mesasage;
 
-    public static Device info(Device device, String message){
+    public static void info(Device device, String message){
         System.out.println("[" + LocalDateTime.now() + "] [INFO] " + device + message);
-        return device;
     }
 
     public static void error(Device device){

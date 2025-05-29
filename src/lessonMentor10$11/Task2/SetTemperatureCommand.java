@@ -1,7 +1,5 @@
 package lessonMentor10$11.Task2;
 
-import java.time.LocalDateTime;
-
 public class SetTemperatureCommand implements Command {
     AirConditioner airConditioner;
     Device device;
