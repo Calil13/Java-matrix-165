@@ -13,12 +13,14 @@ public class HomeAutomationController {
 
     void turnOnAllDevices() {
         for (int i = 0; i < count; i++) {
-            if (devices[i] instanceof AirConditioner ac){
+            if (devices[i] instanceof AirConditioner ac) {
                 ac.setIsOn(true);
                 Logger.info(devices[i], ": ON");
             } else if (devices[i] instanceof Light l) {
                 l.setIsOn(true);
                 Logger.info(devices[i], ": ON");
+            } else {
+                throw new ValidationException("Device not found!");
             }
         }
     }
@@ -32,5 +34,6 @@ public class HomeAutomationController {
         for (int i = 0; i < count; i++) {
             Logger.success(devices[i], " success registered!");
         }
+        throw new ValidationException("Failed to register!");
     }
 }
