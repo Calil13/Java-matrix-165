@@ -41,8 +41,9 @@ public class Bank {
             if (fromCard.getBalance() >= payment) {
                 fromCard.setBalance(from.getBalance() - payment);
                 toCard.setBalance(toCard.getBalance() + payment);
-                System.out.println(payment + "AZN paid to " + fromCard.getCarNO() + " cards!" +
-                        "\nNew balance of card '" + toCard.getCarNO() + "' : " + toCard.getBalance());
+                System.out.println(payment + "AZN paid to " + toCard.getCarNO() + " cards!" +
+                        "\nNew balance of card '" + toCard.getCarNO() + "' : " + toCard.getBalance() +
+                        "\nNew balance of card '" + fromCard.getCarNO() + "' : " + fromCard.getBalance());
             } else {
                 System.out.println("Insufficient balance!");
             }
