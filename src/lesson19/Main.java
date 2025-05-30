@@ -13,9 +13,9 @@ public class Main {
         bank.addCard(card2);
         bank.addCard(card3);
 
-        Card[] cards = bank.getCards();
-        if (cards != null || cards.length != 0){
-            for (Card card : cards) {
+        Card[] cards1 = bank.getCards();
+        if (cards1 != null || cards1.length != 0){
+            for (Card card : cards1) {
                 if (card != null) {
                     System.out.println(card);
                 } else {
@@ -23,5 +23,7 @@ public class Main {
                 }
             }
         }
+
+        bank.cardToCard(card3, card1, 50);
     }
 }
