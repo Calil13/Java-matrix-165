@@ -1,4 +1,4 @@
-package lesson19;
+package lesson19$20;
 
 import java.io.Serializable;
 
