@@ -5,6 +5,7 @@ public class Person {
     private String surname;
     private int age;
     private boolean gender;
+    private String email;
 
     public void setName(String name){
         this.name = name;
@@ -36,6 +37,14 @@ public class Person {
 
     public boolean getGender(){
         return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     void printInfo(int i) {

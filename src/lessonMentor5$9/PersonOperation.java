@@ -1,5 +1,12 @@
 package lessonMentor5$9;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class PersonOperation {
@@ -40,7 +47,8 @@ public class PersonOperation {
                     "\n6 - Search Information!" +
                     "\n7 - Search By Start Words!" +
                     "\n8 - Delete Registration!" +
-                    "\n9 - Exit!"
+                    "\n9 - Add Excel!" +
+                    "\n10 - Exit!"
             );
 
             System.out.println();
@@ -75,6 +83,8 @@ public class PersonOperation {
                     delete();
                     break;
                 case 9:
+                    addExcel();
+                case 10:
                     System.exit(0);
                     break;
                 default:
@@ -286,5 +296,39 @@ public class PersonOperation {
         System.out.print("Answer : ");
         int index = scanner.nextInt();
         persons[--index] = null;
+    }
+
+    void addExcel() {
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("People");
+
+        // Header row
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue("Name");
+        header.createCell(1).setCellValue("Age");
+        header.createCell(2).setCellValue("Email");
+
+        // Data rows
+        try {
+            for (int i = 0; i < persons.length; i++) {
+                Person p = persons[i];
+                Row row = sheet.createRow(i + 1);
+                row.createCell(0).setCellValue(p.getName());
+                row.createCell(1).setCellValue(p.getAge());
+                row.createCell(2).setCellValue(p.getEmail());
+            }
+        } catch (Exception e) {
+            throw new ValindationException("Persons not found!");
+        }
+
+        try (FileOutputStream out = new FileOutputStream("people.xlsx")) {
+            workbook.write(out);
+            workbook.close();
+            System.out.println("Excel faylı yaradıldı: people.xlsx");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
