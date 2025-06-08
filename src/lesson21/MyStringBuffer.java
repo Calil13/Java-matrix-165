@@ -1,7 +1,5 @@
 package lesson21;
 
-import java.util.Arrays;
-
 public class MyStringBuffer {
     private char[] buffer;
     int length;
@@ -14,7 +12,7 @@ public class MyStringBuffer {
         length = string.length();
     }
 
-    public void append(String str) {
+    public synchronized void append(String str) {
         if (length + str.length() > buffer.length) {
             char[] newBuffer = new char[length + str.length() * 2];
 
