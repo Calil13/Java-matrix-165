@@ -1,4 +1,4 @@
-package lesson22.Task1;
+package lesson22.Task;
 
 public class InvalidStatusTransitionException extends RuntimeException {
     public InvalidStatusTransitionException(String message) {

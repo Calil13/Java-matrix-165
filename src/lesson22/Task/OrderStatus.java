@@ -1,4 +1,4 @@
-package lesson22.Task1;
+package lesson22.Task;
 
 public enum OrderStatus {
     CREATED, IN_PROGRESS, COMPLETED, CANCELLED;
