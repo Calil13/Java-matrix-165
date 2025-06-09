@@ -1,10 +1,8 @@
 package Bankomat;
 
-import java.util.Objects;
-
 public class ATM extends Bank {
     Bank bank;
-    User user;
+    AtmUser user;
     private double atmBalance;
     int count;
 
@@ -13,7 +11,7 @@ public class ATM extends Bank {
         this.atmBalance = atmBalance;
     }
 
-    public synchronized void withdraw(User user, double amount) {
+    public synchronized void withdraw(AtmUser user, double amount) {
         System.out.println(user.name + " is trying to withdraw " + amount + "AZN.");
 
         bank.addUser(user);
@@ -23,17 +21,19 @@ public class ATM extends Bank {
                 throw new InsufficientFundsException("Insufficient atmBalance! Available:" + atmBalance);
             } else {
                 atmBalance -= amount;
-                bank.setBankBalance(getBankBalance() - amount);
+                bank.setBankBalance(bank.getBankBalance() - amount);
             }
 
-            if (user.getBalance() < amount) {
-                throw new InsufficientFundsException("Insufficient userBalance! Available:" + user.getBalance());
+            if (user.getPersonBalance() < amount) {
+                throw new InsufficientFundsException("Insufficient userBalance! Available:" + user.getPersonBalance());
             } else {
-                user.setBalance(user.getBalance() - amount);
+                user.setPersonBalance(user.getPersonBalance() - amount);
             }
 
-            System.out.println(user.name + " successfully withdrew " + amount + " AZN. Remaining usrBalance: " + user.getBalance() + " AZN.");
-            System.out.println(user.name + " " + user.surname + "'s current atmBalance: " + user.getBalance());
+            System.out.println(user.name + " successfully withdrew " + amount + " AZN. Remaining usrBalance: " + user.getPersonBalance() + " AZN.");
+            System.out.println(user.name + " " + user.surname + "'s current kart balance: " + user.getPersonBalance());
+        } else {
+            throw new InsufficientFundsException("The bank cannot pay you this amount!");
         }
     }
 

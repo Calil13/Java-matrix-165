@@ -305,8 +305,8 @@ public class PersonOperation {
         // Header row
         Row header = sheet.createRow(0);
         header.createCell(0).setCellValue("Name");
-        header.createCell(1).setCellValue("Age");
-        header.createCell(2).setCellValue("Email");
+        header.createCell(1).setCellValue("Surname");
+        header.createCell(2).setCellValue("Age");
 
         // Data rows
         try {
@@ -314,8 +314,8 @@ public class PersonOperation {
                 Person p = persons[i];
                 Row row = sheet.createRow(i + 1);
                 row.createCell(0).setCellValue(p.getName());
-                row.createCell(1).setCellValue(p.getAge());
-                row.createCell(2).setCellValue(p.getEmail());
+                row.createCell(1).setCellValue(p.getSurname());
+                row.createCell(2).setCellValue(p.getAge());
             }
         } catch (Exception e) {
             throw new ValindationException("Persons not found!");
