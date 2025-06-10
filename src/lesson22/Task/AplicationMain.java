@@ -8,5 +8,7 @@ public class AplicationMain {
 
         order.changeStatusOfOrder(OrderStatus.IN_PROGRESS);
         order.changeStatusOfOrder(OrderStatus.COMPLETED);
+        order.changeStatusOfOrder(OrderStatus.CANCELLED);
+        order.changeStatusOfOrder(OrderStatus.COMPLETED);
     }
 }
