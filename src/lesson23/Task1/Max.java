@@ -1,4 +1,4 @@
-package lesson23;
+package lesson23.Task1;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package lesson23;
+package lesson23.Task1;
 
 public class Person {
     String name;
