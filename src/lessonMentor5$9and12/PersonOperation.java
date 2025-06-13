@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
@@ -48,7 +49,8 @@ public class PersonOperation {
                     "\n7 - Search By Start Words!" +
                     "\n8 - Delete Registration!" +
                     "\n9 - Add Excel!" +
-                    "\n10 - Exit!"
+                    "\n10 - İmport Excel!" +
+                    "\n11 - Exit!"
             );
 
             System.out.println();
@@ -84,7 +86,11 @@ public class PersonOperation {
                     break;
                 case 9:
                     addExcel();
+                    break;
                 case 10:
+                    importExcel();
+                    break;
+                case 11:
                     System.exit(0);
                     break;
                 default:
@@ -328,6 +334,40 @@ public class PersonOperation {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
+    public Person[] importExcel() {
+        Person[] persons = null;
+
+        try (FileInputStream fis = new FileInputStream("people.xlsx");
+             Workbook workbook = new XSSFWorkbook(fis)) {
+
+            Sheet sheet = workbook.getSheetAt(0);
+            int rowCount = sheet.getLastRowNum();
+
+            persons = new Person[rowCount];
+
+            for (int i = 1; i <= rowCount; i++) {
+                Row row = sheet.getRow(i);
+                if (row == null) continue;
+
+                String name = row.getCell(0).getStringCellValue();
+                String surname = row.getCell(1).getStringCellValue();
+                int age = (int) row.getCell(2).getNumericCellValue();
+
+                Person p = new Person();
+                p.setName(name);
+                p.setSurname(surname);
+                p.setAge(age);
+
+                persons[i - 1] = p;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return persons;
+    }
+
 }

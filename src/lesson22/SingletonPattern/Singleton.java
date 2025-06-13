@@ -5,7 +5,7 @@ public class Singleton {
 
     private Singleton() {}
 
-    public static Singleton getSingleton() {
+    public synchronized static Singleton getSingleton() {
         if (singleton == null){
             singleton = new Singleton();
         }
