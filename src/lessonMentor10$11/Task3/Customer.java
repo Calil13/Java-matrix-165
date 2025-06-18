@@ -1,6 +1,6 @@
-package lessonMentor10$11;
+package lessonMentor10$11.Task3;
 
-public class Customer extends User{
+public class Customer extends User {
 
     public Customer(String name, String surname) {
         super(name, surname);
