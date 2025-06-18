@@ -1,6 +1,8 @@
-package lesson24.Task1;
+package lesson24;
 
-public class MyArrayList<T> {
+import org.apache.poi.ss.formula.functions.T;
+
+public class MyArrayList<T> implements MyList<T>{
     T[] array;
     int index;
 
@@ -11,14 +13,17 @@ public class MyArrayList<T> {
 
     public void addValue(T value) {
         if (index == array.length) {
-            T[] newArray = (T[]) new Object[array.length * 3];
+            T[] newArray = (T[]) new Object[array.length * 2];
             for (int i = 0; i < array.length; i++) {
                 newArray[i] = array[i];
             }
             array = newArray;
         }
-        array[index] = value;
-        index++;
+        array[index++] = value;
+    }
+
+    public void remove(int removeİndex){
+
     }
 
     public void get() {
