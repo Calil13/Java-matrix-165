@@ -12,7 +12,7 @@ public class BankAccount {
         if (balance > amount) {
             System.out.println(user + " withdraw the balance : " + amount + "AZN");
             balance -= amount;
-            System.out.println("Remaining balance : " + balance + "AZN");
+            System.out.println("Remaining of Bank balance : " + balance + "AZN");
             Thread.sleep(2000);
         } else {
             System.out.println("The balance is not enough.");

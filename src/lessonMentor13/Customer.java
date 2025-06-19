@@ -11,7 +11,7 @@ public class Customer extends Thread {
         this.withdrawBalance = withdrawBalance;
     }
 
-    public synchronized void run() {
+    public void run() {
         try {
             if (account.isActive) {
                 account.withdraw(name, withdrawBalance);
