@@ -1,7 +1,5 @@
 package lesson24;
 
-import org.apache.poi.ss.formula.functions.T;
-
 public class MyArrayList<T> implements MyList<T>{
     T[] array;
     int index;
@@ -22,8 +20,20 @@ public class MyArrayList<T> implements MyList<T>{
         array[index++] = value;
     }
 
-    public void remove(int removeİndex){
+    public void remove(int removeIndex){
+        removeIndex -= 1;
 
+        if (removeIndex < 0 || removeIndex >= index) {
+            System.out.println("Invalid index!");
+            return;
+        }
+
+        for (int i = removeIndex; i < index - 1; i++) {
+            array[i] = array[i + 1];
+        }
+
+        array[index - 1] = null;
+        index--;
     }
 
     public void get() {

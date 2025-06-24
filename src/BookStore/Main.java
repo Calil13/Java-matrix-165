@@ -5,17 +5,15 @@ public class Main {
         BookStore bookStore = new BookStore();
         AddBookDepo addBookDepo = new AddBookDepo();
 
-        Book book1 = new Book();
-        Book book2 = new Book();
-        Book book3 = new Book();
-        Book book4 = new Book();
+        Book book1 = new Book("Java", "Mehmet");
+        Book book2 = new Book("Algorithm", "John");
+        Book book3 = new Book("Cinayət və Cəza", "Fyodor Dostoyevski");
 
         addBookDepo.addBook(book1, 15);
         addBookDepo.addBook(book2, 8);
-        addBookDepo.addBook(book3, 20);
-        addBookDepo.addBook(book4, 31);
 
         bookStore.sellBook(book2);
-        bookStore.sellBook(book3);
+
+        addBookDepo.availableBooks();
     }
 }

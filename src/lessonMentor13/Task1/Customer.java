@@ -1,4 +1,4 @@
-package lessonMentor13;
+package lessonMentor13.Task1;
 
 public class Customer extends Thread {
     private String name;

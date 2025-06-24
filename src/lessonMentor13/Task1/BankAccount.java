@@ -1,4 +1,4 @@
-package lessonMentor13;
+package lessonMentor13.Task1;
 
 public class BankAccount {
     int balance = 10000;

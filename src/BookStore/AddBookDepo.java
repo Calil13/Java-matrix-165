@@ -1,9 +1,8 @@
 package BookStore;
 
 public class AddBookDepo {
+    Book book;
     Book[] depoBook = new Book[100];
-    String bookName;
-    double purchasePrice;
     double maxPurchasePrice = 30;
     int count = 0;
 
@@ -12,6 +11,15 @@ public class AddBookDepo {
             throw new BookStoreException("This book is more expensive than 30 AZN.");
         }
 
+        book.isSetAvailable(true);
+        System.out.println(book.getName() + " - book added to depot.");
         depoBook[count++] = book;
+    }
+
+    public void availableBooks(){
+        System.out.println();
+        for (int i = 0; i < count; i++) {
+            System.out.println("\"" + depoBook[i].getName() + "\" book is available in the store.");
+        }
     }
 }
