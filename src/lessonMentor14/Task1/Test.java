@@ -1,6 +1,6 @@
 package lessonMentor14.Task1;
 
-public class Person {
+public class Test {
     private String name;
     private int age;
 

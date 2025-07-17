@@ -4,10 +4,16 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class TaskMethod {
+    public void changeField(Object object, String filedName, Object newValue) {
+        try {
+            Class<?> clazz = object.getClass();
+            Field field = clazz.getDeclaredField(filedName);
+            field.setAccessible(true);
 
-    private Method method;
+            field.set(object, newValue);
 
-    public void method(Object object, String str) {
-        Field[] fields = object.getClass().getDeclaredFields();
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
