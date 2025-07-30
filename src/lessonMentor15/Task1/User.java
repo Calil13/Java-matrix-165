@@ -1,4 +1,4 @@
-package lessonMentor15;
+package lessonMentor15.Task1;
 
 public class User {
     @NotNull

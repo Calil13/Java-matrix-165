@@ -1,4 +1,4 @@
-package lessonMentor15;
+package lessonMentor15.Task1;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
