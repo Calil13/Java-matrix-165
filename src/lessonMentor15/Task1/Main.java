@@ -14,12 +14,12 @@ public class Main {
         usersList.add(user2);
         usersList.add(user3);
 
-//        try {
-//            ObjectValidator.validate(user1);
-//            System.out.println("user is valid!");
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            ObjectValidator.validate(user1);
+            System.out.println("user is valid!");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         try {
             StatAnalyzer.analyze(usersList);
