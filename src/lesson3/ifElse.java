@@ -6,7 +6,7 @@ public class ifElse {
         int a = 5;
 
         if (a != 5) {
-            System.out.println("Test");
+            System.out.println("test");
         }else if ( a > 0){
             System.out.println("a > 0");
         }else {
